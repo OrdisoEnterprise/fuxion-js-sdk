@@ -1,6 +1,6 @@
 # FuxionServer.AccountsApi
 
-All URIs are relative to *http://192.168.0.31:1524/fuxion-server*
+All URIs are relative to *https://www.embeddedsource.es/fuxion-server*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -63,4 +63,3 @@ src/model/UserRead.js
 src/model/UserUpdate.js
 src/model/ValidationError.js
 src/model/ValidationErrorLocInner.js
-test/model/TransactionUpdateSchema.spec.js

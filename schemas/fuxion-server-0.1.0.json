@@ -15,10 +15,10 @@
     },
     "servers": [
         {
-            "url": "/fuxion-server"
+            "url": "https://www.embeddedsource.es/fuxion-server"
         },
         {
-            "url": ""
+            "url": "https://192.168.0.31.es/fuxion-server"
         }
     ],
     "paths": {
