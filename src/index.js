@@ -28,6 +28,7 @@ import ReportReturnSchema from './model/ReportReturnSchema';
 import Transaction from './model/Transaction';
 import TransactionCreateSchema from './model/TransactionCreateSchema';
 import TransactionReturnSchema from './model/TransactionReturnSchema';
+import TransactionUpdateSchema from './model/TransactionUpdateSchema';
 import UserCreate from './model/UserCreate';
 import UserRead from './model/UserRead';
 import UserUpdate from './model/UserUpdate';
@@ -169,6 +170,12 @@ export {
      * @property {module:model/TransactionReturnSchema}
      */
     TransactionReturnSchema,
+
+    /**
+     * The TransactionUpdateSchema model constructor.
+     * @property {module:model/TransactionUpdateSchema}
+     */
+    TransactionUpdateSchema,
 
     /**
      * The UserCreate model constructor.

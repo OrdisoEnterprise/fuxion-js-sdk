@@ -16,6 +16,7 @@ import ApiClient from "../ApiClient";
 import HTTPValidationError from '../model/HTTPValidationError';
 import TransactionCreateSchema from '../model/TransactionCreateSchema';
 import TransactionReturnSchema from '../model/TransactionReturnSchema';
+import TransactionUpdateSchema from '../model/TransactionUpdateSchema';
 
 /**
 * Transactions service.
@@ -72,6 +73,48 @@ export default class TransactionsApi {
       let returnType = TransactionReturnSchema;
       return this.apiClient.callApi(
         '/api/transactions/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the restDeleteTransactionApiTransactionsTransactionIdDelete operation.
+     * @callback module:api/TransactionsApi~restDeleteTransactionApiTransactionsTransactionIdDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TransactionReturnSchema} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a transaction
+     * @param {String} transactionId 
+     * @param {module:api/TransactionsApi~restDeleteTransactionApiTransactionsTransactionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TransactionReturnSchema}
+     */
+    restDeleteTransactionApiTransactionsTransactionIdDelete(transactionId, callback) {
+      let postBody = null;
+      // verify the required parameter 'transactionId' is set
+      if (transactionId === undefined || transactionId === null) {
+        throw new Error("Missing the required parameter 'transactionId' when calling restDeleteTransactionApiTransactionsTransactionIdDelete");
+      }
+
+      let pathParams = {
+        'transaction_id': transactionId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['OAuth2PasswordBearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = TransactionReturnSchema;
+      return this.apiClient.callApi(
+        '/api/transactions/{transaction_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -156,6 +199,53 @@ export default class TransactionsApi {
       let returnType = TransactionReturnSchema;
       return this.apiClient.callApi(
         '/api/transactions/{transaction_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the restUpdateTransactionApiTransactionsTransactionIdPut operation.
+     * @callback module:api/TransactionsApi~restUpdateTransactionApiTransactionsTransactionIdPutCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TransactionReturnSchema} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a transaction
+     * @param {String} transactionId 
+     * @param {module:model/TransactionUpdateSchema} transactionUpdateSchema 
+     * @param {module:api/TransactionsApi~restUpdateTransactionApiTransactionsTransactionIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TransactionReturnSchema}
+     */
+    restUpdateTransactionApiTransactionsTransactionIdPut(transactionId, transactionUpdateSchema, callback) {
+      let postBody = transactionUpdateSchema;
+      // verify the required parameter 'transactionId' is set
+      if (transactionId === undefined || transactionId === null) {
+        throw new Error("Missing the required parameter 'transactionId' when calling restUpdateTransactionApiTransactionsTransactionIdPut");
+      }
+      // verify the required parameter 'transactionUpdateSchema' is set
+      if (transactionUpdateSchema === undefined || transactionUpdateSchema === null) {
+        throw new Error("Missing the required parameter 'transactionUpdateSchema' when calling restUpdateTransactionApiTransactionsTransactionIdPut");
+      }
+
+      let pathParams = {
+        'transaction_id': transactionId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['OAuth2PasswordBearer'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TransactionReturnSchema;
+      return this.apiClient.callApi(
+        '/api/transactions/{transaction_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
