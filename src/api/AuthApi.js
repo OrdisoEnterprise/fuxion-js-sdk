@@ -14,12 +14,14 @@
 
 import ApiClient from "../ApiClient";
 import BearerResponse from '../model/BearerResponse';
+import BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost from '../model/BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost';
 import BodyResetForgotPasswordAuthForgotPasswordPost from '../model/BodyResetForgotPasswordAuthForgotPasswordPost';
 import BodyResetResetPasswordAuthResetPasswordPost from '../model/BodyResetResetPasswordAuthResetPasswordPost';
 import BodyVerifyRequestTokenAuthRequestVerifyTokenPost from '../model/BodyVerifyRequestTokenAuthRequestVerifyTokenPost';
 import BodyVerifyVerifyAuthVerifyPost from '../model/BodyVerifyVerifyAuthVerifyPost';
 import ErrorModel from '../model/ErrorModel';
 import HTTPValidationError from '../model/HTTPValidationError';
+import OAuth2AuthorizeResponse from '../model/OAuth2AuthorizeResponse';
 import UserCreate from '../model/UserCreate';
 import UserRead from '../model/UserRead';
 
@@ -131,6 +133,222 @@ export default class AuthApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/auth/jwt/logout', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the oauthAssociateGoogleAuthorizeAuthAssociateGoogleAuthorizeGet operation.
+     * @callback module:api/AuthApi~oauthAssociateGoogleAuthorizeAuthAssociateGoogleAuthorizeGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/OAuth2AuthorizeResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Oauth-Associate:Google.Authorize
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} [scopes] 
+     * @param {module:api/AuthApi~oauthAssociateGoogleAuthorizeAuthAssociateGoogleAuthorizeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/OAuth2AuthorizeResponse}
+     */
+    oauthAssociateGoogleAuthorizeAuthAssociateGoogleAuthorizeGet(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'scopes': this.apiClient.buildCollectionParam(opts['scopes'], 'multi')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['OAuth2PasswordBearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = OAuth2AuthorizeResponse;
+      return this.apiClient.callApi(
+        '/auth/associate/google/authorize', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the oauthAssociateGoogleCallbackAuthAssociateGoogleCallbackGet operation.
+     * @callback module:api/AuthApi~oauthAssociateGoogleCallbackAuthAssociateGoogleCallbackGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UserRead} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Oauth-Associate:Google.Callback
+     * The response varies based on the authentication backend used.
+     * @param {Object} opts Optional parameters
+     * @param {String} [code] 
+     * @param {String} [codeVerifier] 
+     * @param {String} [state] 
+     * @param {String} [error] 
+     * @param {module:api/AuthApi~oauthAssociateGoogleCallbackAuthAssociateGoogleCallbackGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UserRead}
+     */
+    oauthAssociateGoogleCallbackAuthAssociateGoogleCallbackGet(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'code': opts['code'],
+        'code_verifier': opts['codeVerifier'],
+        'state': opts['state'],
+        'error': opts['error']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['OAuth2PasswordBearer'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UserRead;
+      return this.apiClient.callApi(
+        '/auth/associate/google/callback', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the oauthGoogleJwtAuthorizeAuthGoogleAuthorizeGet operation.
+     * @callback module:api/AuthApi~oauthGoogleJwtAuthorizeAuthGoogleAuthorizeGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/OAuth2AuthorizeResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Oauth:Google.Jwt.Authorize
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} [scopes] 
+     * @param {module:api/AuthApi~oauthGoogleJwtAuthorizeAuthGoogleAuthorizeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/OAuth2AuthorizeResponse}
+     */
+    oauthGoogleJwtAuthorizeAuthGoogleAuthorizeGet(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'scopes': this.apiClient.buildCollectionParam(opts['scopes'], 'multi')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = OAuth2AuthorizeResponse;
+      return this.apiClient.callApi(
+        '/auth/google/authorize', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the oauthGoogleJwtCallbackAuthGoogleCallbackGet operation.
+     * @callback module:api/AuthApi~oauthGoogleJwtCallbackAuthGoogleCallbackGetCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Oauth:Google.Jwt.Callback
+     * The response varies based on the authentication backend used.
+     * @param {Object} opts Optional parameters
+     * @param {String} [code] 
+     * @param {String} [codeVerifier] 
+     * @param {String} [state] 
+     * @param {String} [error] 
+     * @param {module:api/AuthApi~oauthGoogleJwtCallbackAuthGoogleCallbackGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    oauthGoogleJwtCallbackAuthGoogleCallbackGet(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'code': opts['code'],
+        'code_verifier': opts['codeVerifier'],
+        'state': opts['state'],
+        'error': opts['error']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/auth/google/callback', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the oauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost operation.
+     * @callback module:api/AuthApi~oauthGoogleJwtTokenLoginAuthGoogleTokenLoginPostCallback
+     * @param {String} error Error message, if any.
+     * @param {Object} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Oauth:Google.Jwt.Token-Login
+     * Login a user with an id_token shared from the frontend.
+     * @param {module:model/BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost} bodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost 
+     * @param {module:api/AuthApi~oauthGoogleJwtTokenLoginAuthGoogleTokenLoginPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    oauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost(bodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost, callback) {
+      let postBody = bodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost;
+      // verify the required parameter 'bodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost' is set
+      if (bodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost === undefined || bodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost === null) {
+        throw new Error("Missing the required parameter 'bodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost' when calling oauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/auth/google/token-login', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

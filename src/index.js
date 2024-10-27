@@ -17,6 +17,7 @@ import AccountCreateSchema from './model/AccountCreateSchema';
 import AccountReturnSchema from './model/AccountReturnSchema';
 import AccountUpdateSchema from './model/AccountUpdateSchema';
 import BearerResponse from './model/BearerResponse';
+import BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost from './model/BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost';
 import BodyResetForgotPasswordAuthForgotPasswordPost from './model/BodyResetForgotPasswordAuthForgotPasswordPost';
 import BodyResetResetPasswordAuthResetPasswordPost from './model/BodyResetResetPasswordAuthResetPasswordPost';
 import BodyVerifyRequestTokenAuthRequestVerifyTokenPost from './model/BodyVerifyRequestTokenAuthRequestVerifyTokenPost';
@@ -24,6 +25,7 @@ import BodyVerifyVerifyAuthVerifyPost from './model/BodyVerifyVerifyAuthVerifyPo
 import Detail from './model/Detail';
 import ErrorModel from './model/ErrorModel';
 import HTTPValidationError from './model/HTTPValidationError';
+import OAuth2AuthorizeResponse from './model/OAuth2AuthorizeResponse';
 import ReportReturnSchema from './model/ReportReturnSchema';
 import Transaction from './model/Transaction';
 import TransactionCreateSchema from './model/TransactionCreateSchema';
@@ -106,6 +108,12 @@ export {
     BearerResponse,
 
     /**
+     * The BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost model constructor.
+     * @property {module:model/BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost}
+     */
+    BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost,
+
+    /**
      * The BodyResetForgotPasswordAuthForgotPasswordPost model constructor.
      * @property {module:model/BodyResetForgotPasswordAuthForgotPasswordPost}
      */
@@ -146,6 +154,12 @@ export {
      * @property {module:model/HTTPValidationError}
      */
     HTTPValidationError,
+
+    /**
+     * The OAuth2AuthorizeResponse model constructor.
+     * @property {module:model/OAuth2AuthorizeResponse}
+     */
+    OAuth2AuthorizeResponse,
 
     /**
      * The ReportReturnSchema model constructor.

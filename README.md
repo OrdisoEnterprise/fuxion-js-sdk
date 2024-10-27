@@ -133,6 +133,11 @@ Class | Method | HTTP request | Description
 *FuxionServer.AccountsApi* | [**restUpdateItemApiAccountsAccountIdPut**](docs/AccountsApi.md#restUpdateItemApiAccountsAccountIdPut) | **PUT** /api/accounts/{account_id} | Update a account
 *FuxionServer.AuthApi* | [**authJwtLoginAuthJwtLoginPost**](docs/AuthApi.md#authJwtLoginAuthJwtLoginPost) | **POST** /auth/jwt/login | Auth:Jwt.Login
 *FuxionServer.AuthApi* | [**authJwtLogoutAuthJwtLogoutPost**](docs/AuthApi.md#authJwtLogoutAuthJwtLogoutPost) | **POST** /auth/jwt/logout | Auth:Jwt.Logout
+*FuxionServer.AuthApi* | [**oauthAssociateGoogleAuthorizeAuthAssociateGoogleAuthorizeGet**](docs/AuthApi.md#oauthAssociateGoogleAuthorizeAuthAssociateGoogleAuthorizeGet) | **GET** /auth/associate/google/authorize | Oauth-Associate:Google.Authorize
+*FuxionServer.AuthApi* | [**oauthAssociateGoogleCallbackAuthAssociateGoogleCallbackGet**](docs/AuthApi.md#oauthAssociateGoogleCallbackAuthAssociateGoogleCallbackGet) | **GET** /auth/associate/google/callback | Oauth-Associate:Google.Callback
+*FuxionServer.AuthApi* | [**oauthGoogleJwtAuthorizeAuthGoogleAuthorizeGet**](docs/AuthApi.md#oauthGoogleJwtAuthorizeAuthGoogleAuthorizeGet) | **GET** /auth/google/authorize | Oauth:Google.Jwt.Authorize
+*FuxionServer.AuthApi* | [**oauthGoogleJwtCallbackAuthGoogleCallbackGet**](docs/AuthApi.md#oauthGoogleJwtCallbackAuthGoogleCallbackGet) | **GET** /auth/google/callback | Oauth:Google.Jwt.Callback
+*FuxionServer.AuthApi* | [**oauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost**](docs/AuthApi.md#oauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost) | **POST** /auth/google/token-login | Oauth:Google.Jwt.Token-Login
 *FuxionServer.AuthApi* | [**registerRegisterAuthRegisterPost**](docs/AuthApi.md#registerRegisterAuthRegisterPost) | **POST** /auth/register | Register:Register
 *FuxionServer.AuthApi* | [**resetForgotPasswordAuthForgotPasswordPost**](docs/AuthApi.md#resetForgotPasswordAuthForgotPasswordPost) | **POST** /auth/forgot-password | Reset:Forgot Password
 *FuxionServer.AuthApi* | [**resetResetPasswordAuthResetPasswordPost**](docs/AuthApi.md#resetResetPasswordAuthResetPasswordPost) | **POST** /auth/reset-password | Reset:Reset Password
@@ -161,6 +166,7 @@ Class | Method | HTTP request | Description
  - [FuxionServer.AccountReturnSchema](docs/AccountReturnSchema.md)
  - [FuxionServer.AccountUpdateSchema](docs/AccountUpdateSchema.md)
  - [FuxionServer.BearerResponse](docs/BearerResponse.md)
+ - [FuxionServer.BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost](docs/BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost.md)
  - [FuxionServer.BodyResetForgotPasswordAuthForgotPasswordPost](docs/BodyResetForgotPasswordAuthForgotPasswordPost.md)
  - [FuxionServer.BodyResetResetPasswordAuthResetPasswordPost](docs/BodyResetResetPasswordAuthResetPasswordPost.md)
  - [FuxionServer.BodyVerifyRequestTokenAuthRequestVerifyTokenPost](docs/BodyVerifyRequestTokenAuthRequestVerifyTokenPost.md)
@@ -168,6 +174,7 @@ Class | Method | HTTP request | Description
  - [FuxionServer.Detail](docs/Detail.md)
  - [FuxionServer.ErrorModel](docs/ErrorModel.md)
  - [FuxionServer.HTTPValidationError](docs/HTTPValidationError.md)
+ - [FuxionServer.OAuth2AuthorizeResponse](docs/OAuth2AuthorizeResponse.md)
  - [FuxionServer.ReportReturnSchema](docs/ReportReturnSchema.md)
  - [FuxionServer.Transaction](docs/Transaction.md)
  - [FuxionServer.TransactionCreateSchema](docs/TransactionCreateSchema.md)

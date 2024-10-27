@@ -1376,6 +1376,338 @@
                 ]
             }
         },
+        "/auth/google/authorize": {
+            "get": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Oauth:Google.Jwt.Authorize",
+                "operationId": "oauth_google_jwt_authorize_auth_google_authorize_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "title": "Scopes"
+                        },
+                        "name": "scopes",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OAuth2AuthorizeResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/google/callback": {
+            "get": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Oauth:Google.Jwt.Callback",
+                "description": "The response varies based on the authentication backend used.",
+                "operationId": "oauth_google_jwt_callback_auth_google_callback_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Code"
+                        },
+                        "name": "code",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Code Verifier"
+                        },
+                        "name": "code_verifier",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "State"
+                        },
+                        "name": "state",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Error"
+                        },
+                        "name": "error",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorModel"
+                                },
+                                "examples": {
+                                    "INVALID_STATE_TOKEN": {
+                                        "summary": "Invalid state token."
+                                    },
+                                    "LOGIN_BAD_CREDENTIALS": {
+                                        "summary": "User is inactive.",
+                                        "value": {
+                                            "detail": "LOGIN_BAD_CREDENTIALS"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/google/token-login": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Oauth:Google.Jwt.Token-Login",
+                "description": "Login a user with an id_token shared from the frontend.",
+                "operationId": "oauth_google_jwt_token_login_auth_google_token_login_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_oauth_google_jwt_token_login_auth_google_token_login_post"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorModel"
+                                },
+                                "examples": {
+                                    "INVALID_ID_TOKEN": {
+                                        "summary": "Invalid ID token.",
+                                        "value": {
+                                            "detail": "Invalid ID token."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/associate/google/authorize": {
+            "get": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Oauth-Associate:Google.Authorize",
+                "operationId": "oauth_associate_google_authorize_auth_associate_google_authorize_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array",
+                            "title": "Scopes"
+                        },
+                        "name": "scopes",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OAuth2AuthorizeResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ]
+            }
+        },
+        "/auth/associate/google/callback": {
+            "get": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Oauth-Associate:Google.Callback",
+                "description": "The response varies based on the authentication backend used.",
+                "operationId": "oauth_associate_google_callback_auth_associate_google_callback_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Code"
+                        },
+                        "name": "code",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Code Verifier"
+                        },
+                        "name": "code_verifier",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "State"
+                        },
+                        "name": "state",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "title": "Error"
+                        },
+                        "name": "error",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserRead"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorModel"
+                                },
+                                "examples": {
+                                    "INVALID_STATE_TOKEN": {
+                                        "summary": "Invalid state token."
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "OAuth2PasswordBearer": []
+                    }
+                ]
+            }
+        },
         "/": {
             "get": {
                 "summary": "Welcome",
@@ -1534,6 +1866,19 @@
                 ],
                 "title": "Body_auth_jwt_login_auth_jwt_login_post"
             },
+            "Body_oauth_google_jwt_token_login_auth_google_token_login_post": {
+                "properties": {
+                    "id_token": {
+                        "type": "string",
+                        "title": "Id Token"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id_token"
+                ],
+                "title": "Body_oauth_google_jwt_token_login_auth_google_token_login_post"
+            },
             "Body_reset_forgot_password_auth_forgot_password_post": {
                 "properties": {
                     "email": {
@@ -1642,6 +1987,19 @@
                 },
                 "type": "object",
                 "title": "HTTPValidationError"
+            },
+            "OAuth2AuthorizeResponse": {
+                "properties": {
+                    "authorization_url": {
+                        "type": "string",
+                        "title": "Authorization Url"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "authorization_url"
+                ],
+                "title": "OAuth2AuthorizeResponse"
             },
             "ReportReturnSchema": {
                 "properties": {
