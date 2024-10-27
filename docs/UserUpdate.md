@@ -9,5 +9,9 @@ Name | Type | Description | Notes
 **isActive** | **Boolean** |  | [optional] 
 **isSuperuser** | **Boolean** |  | [optional] 
 **isVerified** | **Boolean** |  | [optional] 
+**name** | **String** |  | [optional] 
+**picture** | **String** |  | [optional] 
+**createdAt** | **String** |  | [optional] 
+**updatedAt** | **String** |  | [optional] 
 
 

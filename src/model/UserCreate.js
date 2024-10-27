@@ -69,6 +69,18 @@ class UserCreate {
             if (data.hasOwnProperty('is_verified')) {
                 obj['is_verified'] = ApiClient.convertToType(data['is_verified'], 'Boolean');
             }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('picture')) {
+                obj['picture'] = ApiClient.convertToType(data['picture'], 'String');
+            }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+            }
         }
         return obj;
     }
@@ -92,6 +104,22 @@ class UserCreate {
         // ensure the json data is a string
         if (data['password'] && !(typeof data['password'] === 'string' || data['password'] instanceof String)) {
             throw new Error("Expected the field `password` to be a primitive type in the JSON string but got " + data['password']);
+        }
+        // ensure the json data is a string
+        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
+            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+        }
+        // ensure the json data is a string
+        if (data['picture'] && !(typeof data['picture'] === 'string' || data['picture'] instanceof String)) {
+            throw new Error("Expected the field `picture` to be a primitive type in the JSON string but got " + data['picture']);
+        }
+        // ensure the json data is a string
+        if (data['created_at'] && !(typeof data['created_at'] === 'string' || data['created_at'] instanceof String)) {
+            throw new Error("Expected the field `created_at` to be a primitive type in the JSON string but got " + data['created_at']);
+        }
+        // ensure the json data is a string
+        if (data['updated_at'] && !(typeof data['updated_at'] === 'string' || data['updated_at'] instanceof String)) {
+            throw new Error("Expected the field `updated_at` to be a primitive type in the JSON string but got " + data['updated_at']);
         }
 
         return true;
@@ -129,6 +157,26 @@ UserCreate.prototype['is_superuser'] = false;
  * @default false
  */
 UserCreate.prototype['is_verified'] = false;
+
+/**
+ * @member {String} name
+ */
+UserCreate.prototype['name'] = undefined;
+
+/**
+ * @member {String} picture
+ */
+UserCreate.prototype['picture'] = undefined;
+
+/**
+ * @member {String} created_at
+ */
+UserCreate.prototype['created_at'] = undefined;
+
+/**
+ * @member {String} updated_at
+ */
+UserCreate.prototype['updated_at'] = undefined;
 
 
 

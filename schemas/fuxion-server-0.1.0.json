@@ -15,10 +15,10 @@
     },
     "servers": [
         {
-            "url": "https://www.embeddedsource.es/fuxion-server"
+            "url": "/fuxion-server"
         },
         {
-            "url": "https://192.168.0.31.es/fuxion-server"
+            "url": ""
         }
     ],
     "paths": {
@@ -2242,6 +2242,22 @@
                         "type": "boolean",
                         "title": "Is Verified",
                         "default": false
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "picture": {
+                        "type": "string",
+                        "title": "Picture"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "title": "Created At"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "title": "Updated At"
                     }
                 },
                 "type": "object",
@@ -2275,6 +2291,22 @@
                         "type": "boolean",
                         "title": "Is Verified",
                         "default": false
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "picture": {
+                        "type": "string",
+                        "title": "Picture"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "title": "Created At"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "title": "Updated At"
                     }
                 },
                 "type": "object",
@@ -2306,6 +2338,22 @@
                     "is_verified": {
                         "type": "boolean",
                         "title": "Is Verified"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "picture": {
+                        "type": "string",
+                        "title": "Picture"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "title": "Created At"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "title": "Updated At"
                     }
                 },
                 "type": "object",

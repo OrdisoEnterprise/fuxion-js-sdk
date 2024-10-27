@@ -122,7 +122,7 @@ api.restCreateItemApiAccountsPost(accountCreateSchema, callback);
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://www.embeddedsource.es/fuxion-server*
+All URIs are relative to *http://localhost/fuxion-server*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

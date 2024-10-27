@@ -67,5 +67,3 @@ src/model/UserRead.js
 src/model/UserUpdate.js
 src/model/ValidationError.js
 src/model/ValidationErrorLocInner.js
-test/model/BodyOauthGoogleJwtTokenLoginAuthGoogleTokenLoginPost.spec.js
-test/model/OAuth2AuthorizeResponse.spec.js

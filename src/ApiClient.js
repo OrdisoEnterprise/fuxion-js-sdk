@@ -33,11 +33,11 @@ class ApiClient {
      * Overrides the default value set in spec file if present
      * @param {String} basePath
      */
-    constructor(basePath = 'https://www.embeddedsource.es/fuxion-server') {
+    constructor(basePath = 'http://localhost/fuxion-server') {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://www.embeddedsource.es/fuxion-server
+         * @default http://localhost/fuxion-server
          */
         this.basePath = basePath.replace(/\/+$/, '');
 
@@ -439,8 +439,7 @@ class ApiClient {
         }
 
         if (contentType === 'application/x-www-form-urlencoded') {
-            // Bug on generator. Not overwrite this line never.
-            request.send(new URLSearchParams(this.normalizeParams(formParams)).toString());
+            request.send(querystring.stringify(this.normalizeParams(formParams)));
         } else if (contentType == 'multipart/form-data') {
             var _formParams = this.normalizeParams(formParams);
             for (var key in _formParams) {
@@ -594,11 +593,11 @@ class ApiClient {
     hostSettings() {
         return [
             {
-                'url': "https://www.embeddedsource.es/fuxion-server",
+                'url': "/fuxion-server",
                 'description': "No description provided",
             },
             {
-                'url': "https://192.168.0.31.es/fuxion-server",
+                'url': "",
                 'description': "No description provided",
             }
         ];
